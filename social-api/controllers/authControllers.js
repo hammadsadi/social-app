@@ -107,13 +107,24 @@ export const signin = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
+// User Logout
 export const signOut = async (req, res) => {
   try {
     res.cookie("jwt", "", {
       maxAge: 0,
     });
     res.status(200).json({ message: "Logout Successful" });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+// Get Logged in User
+export const loggedInUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).select("-password");
+    res.status(200).json({ user });
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ error: "Internal Server Error" });
