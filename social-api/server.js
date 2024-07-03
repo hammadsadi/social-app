@@ -3,11 +3,19 @@ import authRoutes from "./routes/authRoutes.js";
 import colors from "colors";
 import dotenv from "dotenv";
 import connectWithMongoDB from "./config/db.js";
+import cookieParser from "cookie-parser";
 // Init Express
 const app = express();
 
 // Init Dotenv
 dotenv.config();
+
+// Setup Cookie Parser
+app.use(cookieParser());
+
+// Global Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Server PORT
 const PORT = process.env.PORT || 8000;
