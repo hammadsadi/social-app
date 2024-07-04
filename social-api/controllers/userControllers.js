@@ -1,3 +1,4 @@
+import Notification from "../models/notification/notification.js";
 import User from "../models/user/user.js";
 
 // Get User profile
@@ -41,10 +42,45 @@ export const userFollowUnFollow = async (req, res) => {
       // Follow
       await User.findByIdAndUpdate(id, { $push: { followers: req.user._id } });
       await User.findByIdAndUpdate(req.user._id, { $push: { following: id } });
+
+      // Create Notification
+      const newNotification = new Notification({
+        type: "follow",
+        from: req.user?._id,
+        to: userModify?._id,
+      });
+      await newNotification.save();
       res.status(200).json({ message: "User Followed Successful" });
     }
   } catch (error) {
     console.log("error in userFollowUnFollow Controller", error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+// Get Suggested User
+export const getSuggestedUser = async (req, res) => {
+  try {
+    const userId = req.user._id;
+    const userFollowedByMe = await User.findById(userId).select("following");
+    const users = await User.aggregate([
+      {
+        $match: {
+          _id: { $ne: userId },
+        },
+      },
+      { $sample: { size: 10 } },
+    ]);
+
+    const filterUsers = users.filter(
+      (user) => !userFollowedByMe.following.includes(user._id)
+    );
+
+    const suggestedUser = filterUsers.slice(0, 4);
+    suggestedUser.forEach((user) => user.password === null);
+    res.status(200).json(suggestedUser);
+  } catch (error) {
+    console.log("error in getSuggestedUser Controller", error.message);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
