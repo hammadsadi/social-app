@@ -3,6 +3,7 @@ import { protectedRoute } from "../middlewares/protectedRoute.js";
 import {
   getSuggestedUser,
   getUserProfile,
+  updateProfile,
   userFollowUnFollow,
 } from "../controllers/userControllers.js";
 
@@ -13,5 +14,6 @@ const router = express.Router();
 router.get("/profile/:username", protectedRoute, getUserProfile);
 router.post("/follow/:id", protectedRoute, userFollowUnFollow);
 router.get("/suggested", protectedRoute, getSuggestedUser);
+router.post("/update", protectedRoute, updateProfile);
 
 export default router;
