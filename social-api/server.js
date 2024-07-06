@@ -1,6 +1,7 @@
 import express from "express";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
 import colors from "colors";
 import dotenv from "dotenv";
 import connectWithMongoDB from "./config/db.js";
@@ -32,6 +33,7 @@ const PORT = process.env.PORT || 8000;
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/post", postRoutes);
 
 // Listen Server
 app.listen(PORT, () => {
