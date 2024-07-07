@@ -2,6 +2,7 @@ import express from "express";
 import { protectedRoute } from "../middlewares/protectedRoute.js";
 import {
   createPost,
+  createPostComment,
   deletePost,
 } from "../controllers/createPostControllers.js";
 
@@ -11,6 +12,7 @@ const router = express.Router();
 // Create Post
 router.post("/create", protectedRoute, createPost);
 router.delete("/:id", protectedRoute, deletePost);
+router.post("/comment/:id", protectedRoute, createPostComment);
 
 // Export Default
 export default router;

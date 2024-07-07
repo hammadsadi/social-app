@@ -68,3 +68,33 @@ export const deletePost = async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+export const createPostComment = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const userId = req.user._id;
+    const { text } = req.body;
+
+    // Check Comment Text
+    if (!text) {
+      return res.status(400).json({ error: "Text Field Required" });
+    }
+
+    // Get Post
+    const post = await Post.findById(postId);
+    if (!post) return res.status(404).json({ error: "Post Not Found" });
+
+    // Create Comment
+    const comment = {
+      user: userId,
+      text,
+    };
+
+    post.comments.push(comment);
+    await post.save();
+    res.status(200).json(post);
+  } catch (error) {
+    console.log("error in createPostComment Controller", error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
