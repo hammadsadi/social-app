@@ -1,3 +1,4 @@
+import Notification from "../models/notification/notification.js";
 import Post from "../models/post/post.js";
 import User from "../models/user/user.js";
 import { v2 as cloudinary } from "cloudinary";
@@ -95,6 +96,42 @@ export const createPostComment = async (req, res) => {
     res.status(200).json(post);
   } catch (error) {
     console.log("error in createPostComment Controller", error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+export const postLikeUnLike = async (req, res) => {
+  try {
+    const userId = req.user._id;
+    const { id: postId } = req.params;
+
+    // Find Post
+    const post = await Post.findById(postId);
+    if (!post) return res.status(404).json({ error: "Post Not Found" });
+
+    // Check Like or Unlike
+    const checkReaction = post.likes.includes(userId);
+    if (checkReaction) {
+      // unLike or Remove Like
+      await Post.updateOne({ _id: postId }, { $pull: { likes: userId } });
+      res.status(200).json({ message: "Post Unlike Successful" });
+    } else {
+      // like
+      post.likes.push(userId);
+      await post.save();
+
+      // Notification
+      const notification = new Notification({
+        from: userId,
+        to: post.user,
+        type: "like",
+      });
+
+      await notification.save();
+      res.status(200).json({ message: "Post Liked Successful" });
+    }
+  } catch (error) {
+    console.log("error in postLikeUnLike Controller", error.message);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
