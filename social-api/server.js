@@ -1,7 +1,8 @@
 import express from "express";
-import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import postRoutes from "./routes/postRoutes.js";
+import authRoutes from "./routes/authRoute.js";
+import userRoutes from "./routes/userRoute.js";
+import postRoutes from "./routes/postRoute.js";
+import notificationRoutes from "./routes/notificationRoute.js";
 import colors from "colors";
 import dotenv from "dotenv";
 import connectWithMongoDB from "./config/db.js";
@@ -34,6 +35,7 @@ const PORT = process.env.PORT || 8000;
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);
+app.use("/api/notification", notificationRoutes);
 
 // Listen Server
 app.listen(PORT, () => {
