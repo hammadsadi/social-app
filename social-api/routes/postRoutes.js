@@ -4,6 +4,8 @@ import {
   createPost,
   createPostComment,
   deletePost,
+  getAllPosts,
+  getLikedPosts,
   postLikeUnLike,
 } from "../controllers/createPostControllers.js";
 
@@ -11,6 +13,8 @@ import {
 const router = express.Router();
 
 // Create Post
+router.get("/all", protectedRoute, getAllPosts);
+router.get("/liked/:id", protectedRoute, getLikedPosts);
 router.post("/create", protectedRoute, createPost);
 router.delete("/:id", protectedRoute, deletePost);
 router.post("/likeUnlike/:id", protectedRoute, postLikeUnLike);
