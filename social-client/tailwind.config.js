@@ -1,23 +1,16 @@
 import daisyui from "daisyui";
-import daisyUIThemes from "daisyui/src/theming/themes";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#dca54c",
+      },
+      fontFamily: {
+        fontHr: "Playwrite HR, 'cursive'",
+      },
+    },
   },
   plugins: [daisyui],
-
-  daisyui: {
-    themes: [
-      "light",
-      {
-        luxury: {
-          ...daisyUIThemes["luxury"],
-          primary: "#dca54c",
-          secondary: "#331800",
-        },
-      },
-    ],
-  },
 };
