@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#dca54c",
+        primary: "#0d5ec9",
       },
       fontFamily: {
         fontHr: "Playwrite HR, 'cursive'",

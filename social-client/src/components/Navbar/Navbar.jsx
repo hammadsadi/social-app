@@ -3,7 +3,7 @@ import { RiNotification2Line } from "react-icons/ri";
 import avatar from "../../assets/images/sadi avatr.jpg";
 const Navbar = () => {
   return (
-    <nav className="bg-slate-900/35 w-full shadow-md">
+    <nav className="shadow-md bg-white fixed w-full top-0 z-20">
       <div className="container mx-auto flex justify-between items-center py-3">
         <Link to="/" className="text-primary font-fontHr md:text-2xl text-lg">
           Ummah
@@ -20,13 +20,13 @@ const Navbar = () => {
               type="text"
               id="Search"
               placeholder="Search for..."
-              className="w-full rounded-md outline-none bg-black text-white/50 py-2.5 pe-10 pl-4 shadow-sm sm:text-sm"
+              className="w-full rounded-md outline-none bg-slate-100 text-black/50 py-2.5 pe-10 pl-4 shadow-sm sm:text-sm"
             />
 
             <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
               <button
                 type="button"
-                className="text-white/50 hover:text-white/60"
+                className="text-black/50  hover:text-black/60"
               >
                 <span className="sr-only">Search</span>
 
@@ -51,11 +51,11 @@ const Navbar = () => {
         {/* User Info */}
         <div className="flex justify-center items-center gap-4">
           <button>
-            <RiNotification2Line className="text-lg text-white/50 hover:text-white/60" />
+            <RiNotification2Line className="text-lg text-black/50 hover:text-black/60" />
           </button>
           <Link>
             {" "}
-            <img src={avatar} alt="" className="w-10 h-10 rounded-full" />{" "}
+            <img src={avatar} alt="" className="w-10 h-10 rounded-md" />{" "}
           </Link>
         </div>
       </div>
