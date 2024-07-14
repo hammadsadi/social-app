@@ -54,23 +54,23 @@ const Sideabr = () => {
 
         {/* Extra More Info */}
         <div className="p-4 text-black space-y-4">
-          <Link className="flex items-center gap-2 ">
+          <Link className="flex items-center gap-2 hover:text-primary transition-all duration-200">
             <img src={homeSvg} alt="" className="w-5" />
             <span className="text-base ">Feed</span>
           </Link>
-          <Link className="flex items-center gap-2 ">
+          <Link className="flex items-center gap-2 hover:text-primary transition-all duration-200">
             <img src={userConnect} alt="" className="w-5" />
             <span className="text-base t">Connection </span>
           </Link>
-          <Link className="flex items-center gap-2 ">
+          <Link className="flex items-center gap-2 hover:text-primary transition-all duration-200">
             <img src={eventSvg} alt="" className="w-5" />
             <span className="text-base t">Event</span>
           </Link>
-          <Link className="flex items-center gap-2 ">
+          <Link className="flex items-center gap-2 hover:text-primary transition-all duration-200">
             <img src={notificationSvg} alt="" className="w-5" />
             <span className="text-base t">Notifications</span>
           </Link>
-          <Link className="flex items-center gap-2 ">
+          <Link className="flex items-center gap-2 hover:text-primary transition-all duration-200">
             <img src={settingSvg} alt="" className="w-5" />
             <span className="text-base t">Settings</span>
           </Link>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Sideabr from "../components/Sideabr/Sideabr";
 import Feed from "../components/Feed/Feed";
 import Widget from "../components/Widget/Widget";
+import Posts from "../components/Posts/Posts";
 const Main = () => {
   return (
     <div className="w-full bg-slate-100  h-screen overflow-hidden">
@@ -20,107 +21,7 @@ const Main = () => {
 
           {/* CENTER */}
           <div className="flex-1 h-full px-4 flex flex-col gap-6 overflow-y-auto no-scrollbar rounded-lg">
-            <h3>Pos Area</h3>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate laudantium, excepturi odit earum temporibus porro
-                similique voluptatum quo esse modi praesentium deleniti dolore
-                debitis provident adipisci cupiditate eum facere ullam
-                consequatur hic odio impedit magnam. Dolores doloribus porro,
-                nemo rem incidunt voluptatem eum tenetur at ut quis doloremque.
-                Dolor labore architecto nobis eligendi excepturi unde veniam
-                maxime quas! Veniam aut commodi ea possimus magnam, eius nostrum
-                asperiores a enim mollitia dolorem quae nulla laboriosam saepe,
-                expedita perferendis. Quas, ex aliquam? Dignissimos voluptas
-                laudantium nam est eaque, vel cumque fuga labore veniam sed
-                delectus eos aspernatur nisi maxime earum quis distinctio?
-              </p>
-            </div>
+            <Posts />
           </div>
 
           {/* RIGJT */}
