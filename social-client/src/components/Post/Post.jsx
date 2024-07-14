@@ -2,10 +2,20 @@ import SameShape from "../SameShape/SameShape";
 import postImg from "../../assets/images/cover-social.jpg";
 import avatar from "../../assets/images/sadi avatr.jpg";
 import { HiDotsHorizontal } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import { CiBookmark } from "react-icons/ci";
+import { FaUserXmark } from "react-icons/fa6";
+import { RiUserForbidFill } from "react-icons/ri";
+import { CiFlag1 } from "react-icons/ci";
+import { useEffect, useState } from "react";
+
 const Post = () => {
+  const [showPostAction, setShowPostAction] = useState(false);
+
+  useEffect(() => {}, []);
   return (
     <SameShape>
-      <div className="flex flex-col p-6 space-y-6 overflow-hidden rounded-lg shadow-md  text-black/50">
+      <div className="flex flex-col p-6 space-y-6 overflow-hidden rounded-lg shadow-md relative  text-black/50">
         <div className="flex justify-between items-center">
           <div className="flex space-x-4">
             <img
@@ -28,7 +38,7 @@ const Post = () => {
               <p className="capitalize text-xs">mern Stack developer</p>
             </div>
           </div>
-          <button>
+          <button onClick={() => setShowPostAction(!showPostAction)}>
             <HiDotsHorizontal />
           </button>
         </div>
@@ -101,6 +111,41 @@ const Post = () => {
             </button>
           </div>
         </div>
+        {/* Post Action */}
+        {showPostAction ? (
+          <div className="absolute top-10 right-8">
+            <SameShape>
+              <div className="rounded-lg bg-white  w-52 shadow-2xl">
+                <ul className="p-4 flex flex-col gap-3">
+                  <li>
+                    <Link className="flex gap-1 items-center font-medium">
+                      <CiBookmark /> <span className="text-sm">Bookmark</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="flex gap-1 items-center font-medium">
+                      <FaUserXmark />{" "}
+                      <span className="text-sm">Remove Connection</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="flex gap-1 items-center font-medium">
+                      <RiUserForbidFill />{" "}
+                      <span className="text-sm">Block User</span>
+                    </Link>
+                  </li>
+                </ul>
+                <div className="border-t">
+                  <Link className="flex gap-1 items-center p-4 font-medium">
+                    <CiFlag1 /> <span className="text-sm">Report Post</span>
+                  </Link>
+                </div>
+              </div>
+            </SameShape>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </SameShape>
   );

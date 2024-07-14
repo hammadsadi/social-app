@@ -45,6 +45,7 @@ const Posts = () => {
       {/* Post Area */}
       <div>
         <Post />
+        <Post />
       </div>
     </div>
   );

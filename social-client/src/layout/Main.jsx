@@ -25,8 +25,8 @@ const Main = () => {
           </div>
 
           {/* RIGJT */}
-          <div className="hidden w-1/4 h-full lg:flex flex-col gap-8 overflow-y-auto">
-            <h3>Right Side</h3>
+          <div className="hidden w-1/5 h-full lg:flex flex-col gap-8 overflow-y-auto">
+            <Widget />
           </div>
         </div>
       </div>
