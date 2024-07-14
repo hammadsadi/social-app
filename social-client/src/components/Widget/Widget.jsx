@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SameShape from "../SameShape/SameShape";
 import SuggestedUserWidgetItem from "../SuggestedUserWidgetItem/SuggestedUserWidgetItem";
 
@@ -15,6 +16,11 @@ const Widget = () => {
             <SuggestedUserWidgetItem />
             <SuggestedUserWidgetItem />
             <SuggestedUserWidgetItem />
+          </div>
+          <div className="text-center">
+            <Link className="mt-3 inline-block w-full py-1 text-sm rounded-md bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all duration-200">
+              View More
+            </Link>
           </div>
         </div>
       </SameShape>
